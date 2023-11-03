@@ -10,6 +10,10 @@ app.get(bodyParser.json());
 app.use(express.json());
 app.use(cors());
 
+app.get("/hello",(req,res)=>{
+    res.json("hello")
+})
+
 app.post('/', async(req, res) => {
     const {name,email,password}=req.body
     const user=new User({name,email,password})
@@ -27,5 +31,3 @@ mongoose
         }))
     }) 
     .catch((error) => console.log(error));
-
-    module.export=app

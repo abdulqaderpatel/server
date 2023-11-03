@@ -6,9 +6,9 @@ const User = require("./models/user");
 require("dotenv").config();
 const app = express();
 
-app.get(bodyParser.json());
-app.use(express.json());
-app.use(cors());
+app.use(bodyParser.json());
+app.get(express.json());
+app.get(cors());
 
 const connectMongo=require("./connectMongo")
 

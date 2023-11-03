@@ -6,7 +6,8 @@ const User = require("./models/user");
 require("dotenv").config();
 const app = express();
 
-app.use(bodyParser.json());
+app.get(bodyParser.json());
+app.use(express.json());
 app.use(cors());
 
 app.post('/', async(req, res) => {
